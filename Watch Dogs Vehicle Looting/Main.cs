@@ -98,12 +98,12 @@ namespace Watch_Dogs_Vehicle_Looting
                         if (!caughtByCops) // If the item is actually sold
                         {
                             Game.Player.Money = Game.Player.Money + itemValue;
-                            if (itemCount > 1) UI.Notify($"You just sold {itemCount} items for ${itemValue}!");
-                            else if (itemCount == 1) UI.Notify($"You just sold {itemCount} item for ${itemValue}!");
+                            if (itemCount > 1) UI.Notify($"Sold {itemCount} items for ${itemValue}");
+                            else if (itemCount == 1) UI.Notify($"Sold {itemCount} item for ${itemValue}");
                         } 
                         else // If the cops are called
                         {
-                            UI.Notify("The pawn shop has alerted the cops about your items being stolen!");
+                            UI.Notify("The pawn shop has alerted the cops about your items being stolen");
                             Game.Player.WantedLevel = 2;
                         }
                     }

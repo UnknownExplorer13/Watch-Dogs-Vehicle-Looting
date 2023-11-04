@@ -109,8 +109,12 @@ namespace Watch_Dogs_Vehicle_Looting
             if(type == ItemType.pawnItem)
             {
                 Item item = items[r.Next(items.Count)];
-                itemName = item.name + " ($" + item.value + ")";
-                inventory.pawnItems.Add(item);
+                if(item.canBeSold) // Add item to player inventory if it can be sold
+                {
+                    itemName = item.name + " ($" + item.value + ")";
+                    inventory.pawnItems.Add(item);
+                }
+                else itemName = item.name;  // Remove the " ($value)" part from the vehicle looted notification
                 inventory.totalValue += item.value;
                 InventoryManagement.SaveInventory(inventory);
             }
