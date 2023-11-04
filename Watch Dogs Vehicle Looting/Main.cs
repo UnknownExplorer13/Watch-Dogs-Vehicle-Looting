@@ -93,8 +93,7 @@ namespace Watch_Dogs_Vehicle_Looting
                         Game.FadeScreenIn(1000);
 
                         bool caughtByCops = false;
-                        if (new Random().Next(0, 100) >= 50) caughtByCops = true;
-                        UI.Notify(caughtByCops.ToString());
+                        if (new Random().Next(0, 100) >= 80) caughtByCops = true;
                         if (!caughtByCops) // If the item is actually sold
                         {
                             Game.Player.Money = Game.Player.Money + itemValue;
