@@ -43,7 +43,15 @@ namespace Watch_Dogs_Vehicle_Looting
 			// If the player is driving a vehicle, try to loot it
 			if(Game.Player.Character.IsInVehicle() && Game.Player.Character.SeatIndex == VehicleSeat.Driver)
 			{
-				if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && !Mod.blockedModels.Contains(Game.Player.Character.CurrentVehicle.Model))
+				// If the vehicle's class is not part of the blocked class list then loot it
+				if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && !Mod.blockedClassList.Contains(Game.Player.Character.CurrentVehicle.ClassType.ToString()))
+				{
+					Wait(2500);
+					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(Game.Player.Character.CurrentVehicle);
+					lootedVehicles.Add(Game.Player.Character.CurrentVehicle);
+				}
+				// If the vehicle's class is part of the blocked class list but the model is in the exception list then loot it
+				else if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && Mod.blockedClassList.Contains(Game.Player.Character.CurrentVehicle.ClassType.ToString()) && Mod.blockedClassExceptions.Contains(Game.Player.Character.CurrentVehicle.Model))
 				{
 					Wait(2500);
 					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(Game.Player.Character.CurrentVehicle);

@@ -31,7 +31,8 @@ namespace Watch_Dogs_Vehicle_Looting
 
 		// Misc
 		public static List<Blip> blips = new List<Blip>();
-		public static List<Model> blockedModels = new List<Model>();
+		public static List<string> blockedClassList = new List<string>();
+		public static List<Model> blockedClassExceptions = new List<Model>();
 
 		public static void VerifyFileStructure()
 		{
@@ -45,7 +46,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			if (!File.Exists(weaponsJson)) File.WriteAllText(weaponsJson, JsonConvert.SerializeObject(Defaults.defaultWeapons, Formatting.Indented));
 
 			// Configuration & Inventory
-			if (!File.Exists(modConfig)) File.WriteAllText(modConfig, JsonConvert.SerializeObject(new Configuration() { pawnShops = Defaults.defaultShops, blockedVehicles = new List<string>(), settings = new Settings() }, Formatting.Indented));
+			if (!File.Exists(modConfig)) File.WriteAllText(modConfig, JsonConvert.SerializeObject(new Configuration() { pawnShops = Defaults.defaultShops, blockedClasses = Defaults.defaultBlockedClasses, settings = new Settings() }, Formatting.Indented));
 			if(!File.Exists(inventories)) File.WriteAllText(inventories, JsonConvert.SerializeObject(new List<Inventory>(), Formatting.Indented));
 		}
 
@@ -56,7 +57,13 @@ namespace Watch_Dogs_Vehicle_Looting
 			items = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(pawnItemsJson));
 			food = JsonConvert.DeserializeObject<List<Food>>(File.ReadAllText(foodItemsJson));
 			weapons = JsonConvert.DeserializeObject<List<Classes.Items.Weapon>>(File.ReadAllText(weaponsJson));
-			foreach (string model in config.blockedVehicles) blockedModels.Add(new Model(model));
+
+			// Iterate over each blocked class and its exceptions and add them to lists
+			foreach (BlockedClass blocked in config.blockedClasses)
+			{
+				blockedClassList.Add(new string(blocked.className.ToCharArray()));
+				foreach (string model in blocked.modelExceptions) blockedClassExceptions.Add(new Model(model));
+			}
 		}
 
 		public static void CreateBlips()

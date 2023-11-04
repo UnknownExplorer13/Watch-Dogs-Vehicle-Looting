@@ -1371,5 +1371,55 @@ namespace Watch_Dogs_Vehicle_Looting
 				markerZ = 55.80189f
 			}
 		};
+
+		// Define all of the default blocked classes and model exceptions
+		public static List<BlockedClass> defaultBlockedClasses = new List<BlockedClass>()
+		{
+			new BlockedClass()
+			{
+				className = "Boats",
+				modelExceptions = new List<string> {"marquis"}
+			},
+			new BlockedClass()
+			{
+				className = "Cycles",
+				modelExceptions = new List<string> {}
+			},
+			new BlockedClass()
+			{
+				className = "Helicopters",
+				modelExceptions = new List<string> {"supervolito", "supervolito2", "swift", "swift2", "volatus"}
+			},
+			new BlockedClass()
+			{
+				className = "Military",
+				modelExceptions = new List<string> {"barracks", "barracks2", "barracks3", "barrage", "crusader", "vetir"}
+			},
+			new BlockedClass()
+			{
+				className = "Motorcycles",
+				modelExceptions = new List<string> {}
+			},
+			new BlockedClass()
+			{
+				className = "OpenWheel",
+				modelExceptions = new List<string> {}
+			},
+			new BlockedClass()
+			{
+				className = "Planes",
+				modelExceptions = new List<string> {"jet", "luxor", "luxor2", "miljet", "nimbus", "shamal"}
+			},
+			new BlockedClass()
+			{
+				className = "Trains",
+				modelExceptions = new List<string> {}
+			},
+			new BlockedClass()
+			{
+				className = "Utility",
+				modelExceptions = new List<string> {"sadler", "sadler2", "scrap", "towtruck", "towtruck2", "utillitruck", "utillitruck2", "utillitruck3", "slamtruck"}
+			}
+		};
 	}
 }

@@ -5,7 +5,7 @@ namespace Watch_Dogs_Vehicle_Looting.Classes
 	public class Configuration
 	{
 		public Settings settings { get; set; }
-		public List<string> blockedVehicles { get; set; }
+		public List<BlockedClass> blockedClasses { get; set; }
 		public List<PawnShop> pawnShops { get; set; }
 	}
 
