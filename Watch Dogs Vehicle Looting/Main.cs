@@ -63,8 +63,12 @@ namespace Watch_Dogs_Vehicle_Looting
 			{
 				Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
 				foreach (PawnShop shop in Mod.config.pawnShops)
-					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1)
-						UI.ShowSubtitle($"Press ~y~E ~w~to sell your loot to the pawn shop (${inventory.totalValue})", 1);
+					// Player is not wanted
+					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel == 0)
+						UI.ShowSubtitle($"Press ~y~E ~w~to sell loot to the pawn shop (${inventory.totalValue})", 1);
+					// Player is wanted
+					else if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel != 0)
+						UI.ShowSubtitle($"Cannot sell loot when wanted", 1);
 			}
 		}
 
@@ -77,7 +81,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			}
 
 			// If the pawnshop use key is pressed
-			if(e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle())
+			if(e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && Game.Player.WantedLevel == 0)
 			{
 				foreach(PawnShop shop in Mod.config.pawnShops)
 				{
