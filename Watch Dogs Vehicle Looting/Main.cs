@@ -96,10 +96,6 @@ namespace Watch_Dogs_Vehicle_Looting
 						Wait(1000);
 						int itemCount = inventory.pawnItems.Count;
 						int itemValue = inventory.totalValue;
-						inventory.pawnItems.Clear();
-						inventory.totalValue = 0;
-						InventoryManagement.SaveInventory(inventory); 
-						World.CurrentDayTime = new TimeSpan(World.CurrentDayTime.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 						Wait(500);
 						Game.Player.Character.FreezePosition = false; 
 						Game.FadeScreenIn(1000);
@@ -108,6 +104,10 @@ namespace Watch_Dogs_Vehicle_Looting
 						if (new Random().Next(0, 100) >= 80) caughtByCops = true;
 						if (!caughtByCops) // If the item is actually sold
 						{
+							inventory.pawnItems.Clear();
+							inventory.totalValue = 0;
+							InventoryManagement.SaveInventory(inventory);
+							World.CurrentDayTime = new TimeSpan(World.CurrentDayTime.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 							Game.Player.Money = Game.Player.Money + itemValue;
 							if (itemCount > 1) UI.Notify($"Sold {itemCount} items for ${itemValue}");
 							else if (itemCount == 1) UI.Notify($"Sold {itemCount} item for ${itemValue}");
