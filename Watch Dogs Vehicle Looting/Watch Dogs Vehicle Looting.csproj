@@ -58,6 +58,7 @@
     <Compile Include="Classes\Items\Food.cs" />
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Items\Weapon.cs" />
+    <Compile Include="Localization\Localization.cs" />
     <Compile Include="Defaults.cs" />
     <Compile Include="InventoryManagement.cs" />
     <Compile Include="Main.cs" />
@@ -66,6 +67,58 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Localization\american.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\american.cfg</TargetPath>
+    </None>
+    <None Include="Localization\chinese.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\chinese.cfg</TargetPath>
+    </None>
+    <None Include="Localization\chinesesimplified.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\chinesesimplified.cfg</TargetPath>
+    </None>
+    <None Include="Localization\french.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\french.cfg</TargetPath>
+    </None>
+    <None Include="Localization\german.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\german.cfg</TargetPath>
+    </None>
+    <None Include="Localization\italian.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\italian.cfg</TargetPath>
+    </None>
+    <None Include="Localization\japanese.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\japanese.cfg</TargetPath>
+    </None>
+    <None Include="Localization\korean.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\korean.cfg</TargetPath>
+    </None>
+    <None Include="Localization\mexican.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\mexican.cfg</TargetPath>
+    </None>
+    <None Include="Localization\polish.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\polish.cfg</TargetPath>
+    </None>
+    <None Include="Localization\portuguese.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\portuguese.cfg</TargetPath>
+    </None>
+    <None Include="Localization\russian.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\russian.cfg</TargetPath>
+    </None>
+    <None Include="Localization\spanish.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>Watch Dogs Vehicle Looting\Translations\spanish.cfg</TargetPath>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,9 @@ using System.Windows.Forms;
 using GTA.Math;
 using System.Drawing;
 using Watch_Dogs_Vehicle_Looting.Classes;
+using Watch_Dogs_Vehicle_Looting.Localization;
 using GTA.Native;
+using System.Text;
 
 namespace Watch_Dogs_Vehicle_Looting
 {
@@ -29,7 +31,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			Aborted += Mod.OnAbort;
 			KeyDown += OnKeyDown;
 
-			UI.Notify("~y~Watch Dogs Vehicle Looting ~w~successfully loaded!");
+			UI.Notify(Localization.Localize.GetLangEntry("Initialized"));
 		}
 
 		private void OnTick(object sender, EventArgs e)
@@ -65,10 +67,15 @@ namespace Watch_Dogs_Vehicle_Looting
 				foreach (PawnShop shop in Mod.config.pawnShops)
 					// Player is not wanted
 					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel == 0)
-						UI.ShowSubtitle($"Press ~y~E ~w~to sell loot to the pawn shop (${inventory.totalValue})", 1);
+					{
+						StringBuilder subtitle = new StringBuilder (Localization.Localize.GetLangEntry("CanSell"));
+						subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
+
+						UI.ShowSubtitle(subtitle.ToString(), 1);
+					}
 					// Player is wanted
 					else if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel != 0)
-						UI.ShowSubtitle($"Cannot sell loot when wanted", 1);
+						UI.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
 			}
 		}
 
@@ -109,12 +116,28 @@ namespace Watch_Dogs_Vehicle_Looting
 							InventoryManagement.SaveInventory(inventory);
 							World.CurrentDayTime = new TimeSpan(World.CurrentDayTime.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 							Game.Player.Money = Game.Player.Money + itemValue;
-							if (itemCount > 1) UI.Notify($"Sold {itemCount} items for ${itemValue}");
-							else if (itemCount == 1) UI.Notify($"Sold {itemCount} item for ${itemValue}");
+
+							if (itemCount > 1)
+							{
+								StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("SoldItems"));
+								notification.Replace("{itemCount}", $"{itemCount}");
+								notification.Replace("{itemValue}", $"{itemValue}");
+
+								UI.Notify(notification.ToString());
+							}
+							else if (itemCount == 1)
+							{
+								StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("SoldItems"));
+								notification.Replace("{itemCount}", $"{itemCount}");
+								notification.Replace("{itemValue}", $"{itemValue}");
+								notification.Replace("items", "item");
+
+								UI.Notify(notification.ToString());
+							}
 						} 
 						else // If the cops are called
 						{
-							UI.Notify("The pawn shop has alerted the cops about your items being stolen");
+							UI.Notify(Localization.Localize.GetLangEntry("CopsCalled"));
 							Game.Player.WantedLevel = 2;
 						}
 					}
