@@ -27,23 +27,25 @@ Changes in my version compared to the one on [GTA5-Mods](https://www.gta5-mods.c
 5. Localization support for each supported language in GTA 5 (W.I.P as of 6th of November, 2023)
 
 <div align="center">
-<h3><i>Localization Progress</i></h3>
+<h3><i>Localization Support</i></h3>
 
-| Language             | Status      |
-| -------------------- | ----------- |
-| American (English)   | W.I.P       |
-| Chinese              | No Progress |
-| Chinese (Simplified) | No Progress |
-| French               | No Progress |
-| German               | No Progress |
-| Italian              | No Progress |
-| Japanese             | No Progress |
-| Korean               | No Progress |
-| Mexican              | No Progress |
-| Polish               | No Progress |
-| Portuguese           | No Progress |
-| Russian              | No Progress |
-| Spanish              | No Progress |
+| Language             | UI Text       | Item Names    | Food Names    | Weapon Names |
+| -------------------- | ------------  | ------------- | ------------- | ------------ |
+| American (English)   | Full          | Full          | Full          | Full         |
+| Chinese              | No Progress\* | No Progress   | No Progress   | Full         |
+| Chinese (Simplified) | No Progress\* | No Progress   | No Progress   | Full         |
+| French               | No Progress\* | No Progress   | No Progress   | Full         |
+| German               | No Progress\* | No Progress   | No Progress   | Full         |
+| Italian              | No Progress\* | No Progress   | No Progress   | Full         |
+| Japanese             | No Progress\* | No Progress   | No Progress   | Full         |
+| Korean               | No Progress\* | No Progress   | No Progress   | Full         |
+| Mexican              | No Progress\* | No Progress   | No Progress   | Full         |
+| Polish               | No Progress\* | No Progress   | No Progress   | Full         |
+| Portuguese           | No Progress\* | No Progress   | No Progress   | Full         |
+| Russian              | No Progress\* | No Progress   | No Progress   | Full         |
+| Spanish              | No Progress\* | No Progress   | No Progress   | Full         |
+
+<h6>* = Bare minimum localization support from strings already available in-game</h6>
 </div>
 
 
