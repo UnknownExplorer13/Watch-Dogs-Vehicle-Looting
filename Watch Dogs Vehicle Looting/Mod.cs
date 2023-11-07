@@ -133,7 +133,14 @@ namespace Watch_Dogs_Vehicle_Looting
 				Food foodItem = food[r.Next(food.Count)];
 				string localFoodItemName = Localization.Localize.GetLangEntry(foodItem.name);
 				itemName = localFoodItemName;
-				if (foodItem.healsPlayer) Game.Player.Character.Health = Game.Player.Character.MaxHealth;
+
+				if (foodItem.healsPlayer && Game.Player.Character.Health != Game.Player.Character.MaxHealth)
+				{
+					if (foodItem.healValue == "healSmall") Game.Player.Character.Health += config.settings.foodHealing.healSmall;
+					else if (foodItem.healValue == "healMedium") Game.Player.Character.Health += config.settings.foodHealing.healMedium;
+					else if (foodItem.healValue == "healLarge") Game.Player.Character.Health += config.settings.foodHealing.healLarge;
+					else Game.Player.Character.Health = Game.Player.Character.MaxHealth;
+				}
 			}
 			else if(type == ItemType.weapon)
 			{

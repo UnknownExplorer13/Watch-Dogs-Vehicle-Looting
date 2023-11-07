@@ -4,5 +4,6 @@
 	{
 		public string name { get; set; }
 		public bool healsPlayer { get; set; }
+		public string healValue { get; set; }
 	}
 }

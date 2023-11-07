@@ -238,13 +238,13 @@ namespace Watch_Dogs_Vehicle_Looting
 			},
 			new Item()
 			{
-				name = "ClothingBrandIFruit1",
+				name = "ClothingBrandiFruit1",
 				value = 750,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "ClothingBrandIFruit2",
+				name = "ClothingBrandiFruit2",
 				value = 300,
 				canBeSold = true
 			},
@@ -601,13 +601,13 @@ namespace Watch_Dogs_Vehicle_Looting
 			},
 			new Item()
 			{
-				name = "TechBrandIFruit1",
+				name = "TechBrandiFruit1",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "TechBrandIFruit2",
+				name = "TechBrandiFruit2",
 				value = 200,
 				canBeSold = true
 			},
@@ -849,469 +849,561 @@ namespace Watch_Dogs_Vehicle_Looting
 			new Food()
 			{
 				name = "SnackChips1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips6",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips7",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips8",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips9",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips10",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackSandwich",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "SnackEnergyDrink1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackEnergyDrink2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackEnergyDrink3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackJuice1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackJuice2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCola1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCola2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCola3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackIceCreamBar1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackIceCreamBar2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCoffee1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCoffee2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy6",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackDonut",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "SnackIceCreamBar3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackCandy7",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "SnackChips11",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "SnackChips12",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "SnackEnergyDrink4",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "SnackCandy8",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			// Burger Shot
 			new Food()
 			{
 				name = "BrandBurgerShot1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot6",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot7",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot8",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "BrandBurgerShot9",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			// Cluckin' Bell
 			new Food()
 			{
 				name = "BrandCluckinBell1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandCluckinBell2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandCluckinBell3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMax"
 			},
 			new Food()
 			{
 				name = "BrandCluckinBell4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandCluckinBell5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			// Silce 'N' Dice
 			new Food()
 			{
 				name = "BrandSliceNDice1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandSliceNDice2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandSliceNDice3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandSliceNDice4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandSliceNDice5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			// Taco Bomb
 			new Food()
 			{
 				name = "BrandTacoBomb1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb6",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb7",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb8",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMax"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb9",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "BrandTacoBomb10",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			// Up-n-Atom
 			new Food()
 			{
 				name = "BrandUpNAtom1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom5",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom6",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "BrandUpNAtom7",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			// Other Food Chains
 			new Food()
 			{
 				name = "BrandGeneric1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGeneric2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGenericBITE1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGenericBITE2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGenericBITE3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGeneric3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGeneric4",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandGenericHornys1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandGenericHornys2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healSmall"
 			},
 			new Food()
 			{
 				name = "BrandGenericHornys3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandGeneric5",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGenericWigWam1",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healLarge"
 			},
 			new Food()
 			{
 				name = "BrandGenericWigWam2",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			new Food()
 			{
 				name = "BrandGenericWigWam3",
-				healsPlayer = true
+				healsPlayer = true,
+				healValue = "healMedium"
 			},
 			// Alcohol
 			new Food()
 			{
 				name = "AlcoholFood1",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "AlcoholFood2",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "AlcoholFood3",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "AlcoholFood4",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "AlcoholFood5",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			},
 			new Food()
 			{
 				name = "AlcoholFood6",
-				healsPlayer = false
+				healsPlayer = false,
+				healValue = "healNone"
 			}
 		};
 
