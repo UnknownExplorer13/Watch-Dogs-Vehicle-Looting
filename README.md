@@ -24,7 +24,8 @@ Changes in my version compared to the one on [GTA5-Mods](https://www.gta5-mods.c
 3. Items that can't be sold are no longer added to the player's inventory (stops unnecessary bloat of inventories.json)
 4. Vehicle class block list so motorcycles and other vehicle classes can't be looted
 	1. Includes an exception list for specific vehicle models
-5. Localization support for each supported language in GTA 5 (W.I.P as of 6th of November, 2023)
+5. Food items now heal specific amounts according to configurable values in modConfig.json
+6. Localization support for each supported language in GTA 5 (W.I.P as of 6th of November, 2023)
 
 <div align="center">
 <h3><i>Localization Support</i></h3>
