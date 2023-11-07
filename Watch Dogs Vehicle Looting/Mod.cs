@@ -7,6 +7,8 @@ using GTA.Native;
 using Newtonsoft.Json;
 using Watch_Dogs_Vehicle_Looting.Classes;
 using Watch_Dogs_Vehicle_Looting.Classes.Items;
+using Watch_Dogs_Vehicle_Looting.Localization;
+using System.Text;
 
 namespace Watch_Dogs_Vehicle_Looting
 {
@@ -75,7 +77,7 @@ namespace Watch_Dogs_Vehicle_Looting
 				newBlip.IsShortRange = true;
 				newBlip.Sprite = BlipSprite.DollarBill;
 				newBlip.Color = BlipColor.Green;
-				newBlip.Name = "Pawn Shop";
+				newBlip.Name = Localization.Localize.GetLangEntry("PawnShop");
 				blips.Add(newBlip);
 			}
 		}
@@ -87,11 +89,11 @@ namespace Watch_Dogs_Vehicle_Looting
 			newBlip.IsShortRange = true;
 			newBlip.Sprite = BlipSprite.DollarBill;
 			newBlip.Color = BlipColor.Green;
-			newBlip.Name = "Pawn Shop";
+			newBlip.Name = Localization.Localize.GetLangEntry("PawnShop");
 
 			PawnShop shop = new PawnShop()
 			{
-				displayName = World.GetStreetName(location) + " Pawn",
+				displayName = World.GetStreetName(location) + Localization.Localize.GetLangEntry("Pawn"),
 				markerX = location.X,
 				markerY = location.Y,
 				markerZ = location.Z
@@ -116,19 +118,21 @@ namespace Watch_Dogs_Vehicle_Looting
 			if(type == ItemType.pawnItem)
 			{
 				Item item = items[r.Next(items.Count)];
+				string localItemName = Localization.Localize.GetLangEntry(item.name);
 				if(item.canBeSold) // Add item to player inventory if it can be sold
 				{
-					itemName = item.name + " ($" + item.value + ")";
+					itemName = localItemName + " ($" + item.value + ")";
 					inventory.pawnItems.Add(item);
 				}
-				else itemName = item.name;  // Remove the " ($value)" part from the vehicle looted notification
+				else itemName = localItemName;  // Remove the " ($value)" part from the vehicle looted notification
 				inventory.totalValue += item.value;
 				InventoryManagement.SaveInventory(inventory);
 			}
 			else if(type == ItemType.food)
 			{
 				Food foodItem = food[r.Next(food.Count)];
-				itemName = foodItem.name;
+				string localFoodItemName = Localization.Localize.GetLangEntry(foodItem.name);
+				itemName = localFoodItemName;
 				if (foodItem.healsPlayer) Game.Player.Character.Health = Game.Player.Character.MaxHealth;
 			}
 			else if(type == ItemType.weapon)
@@ -139,7 +143,8 @@ namespace Watch_Dogs_Vehicle_Looting
 					LootVehicle(veh);
 					return;
 				}
-				itemName = weapon.weaponName;
+				string localWeaponName = Localization.Localize.GetLangEntry(weapon.weaponName);
+				itemName = localWeaponName;
 				Weapon(weapon.weaponHash);
 			}
 			else if(type == ItemType.money)
@@ -149,7 +154,9 @@ namespace Watch_Dogs_Vehicle_Looting
 				Game.Player.Money += amount;
 			}
 
-			UI.Notify($"Vehicle Looted: {itemName}");
+			StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("VehicleLooted"));
+			notification.Replace("{itemName}", $"{itemName}");
+			UI.Notify(notification.ToString());
 		}
 
 		private static void Weapon(WeaponHash Weapon)

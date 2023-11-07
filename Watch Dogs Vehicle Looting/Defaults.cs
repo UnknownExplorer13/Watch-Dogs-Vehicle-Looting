@@ -7,1314 +7,1315 @@ namespace Watch_Dogs_Vehicle_Looting
 {
 	public class Defaults
 	{
-		// Define all of the default pawn items
+		// Define all of the default pawn items as localization values
 		public static List<Item> defaultItems = new List<Item>()
 		{
-			// Misc
+			// Generic
 			new Item()
 			{
-				name = "Amputeens Magazine Issue #8 Summer Special",
+				name = "GenericMagazine1",
 				value = 15,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Antique Coin",
+				name = "GenericCoin",
 				value = 125,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "BackSide SkateBoard",
+				name = "GenericSkateboard",
 				value = 135,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of U Lube It Injection Cleaner",
+				name = "GenericCarLube1",
 				value = 10,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of U Lube It Oil Additive",
+				name = "GenericCarLube3",
 				value = 15,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Box of CJ's JIZZ!",
-				value = 5,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Box of Lax to the Max",
-				value = 5,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Can of CoolHand Lube Motor-Oil",
+				name = "GenericCarLube2",
 				value = 15,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Carton of Cardiaque Cigarettes",
+				name = "GenericCigaretteCarton1",
 				value = 75,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Carton of Redwoods",
+				name = "GenericCigaretteCarton2",
 				value = 65,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Fleeca Credit Card",
+				name = "GenericCreditCard1",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Glass Pipe From Smokers Emporium",
+				name = "GenericGlassPipe",
 				value = 10,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Limit Credit Card",
+				name = "GenericCreditCard2",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Los Santos Golf Club Membership Card",
+				name = "GenericGolfClubCard",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Mors Mutual Insurance Papers",
+				name = "GenericMMIPapers",
 				value = 20,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pack of Cardiaque Cigarettes",
+				name = "GenericCigarettePack1",
 				value = 7,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pack of Redwood Cigarettes",
+				name = "GenericCigarettePack2",
 				value = 5,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pre-Paid Los Santos Traffic Card",
+				name = "GenericTrafficCard",
 				value = 15,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Premium Deluxe Motorsports Bill of Sale",
+				name = "GenericBillOfSale",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Shark Credit Card",
+				name = "GenericCreditCard3",
 				value = 5,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "This Months Hottest XXX Mag",
+				name = "GenericMagazine2",
 				value = 10,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Tube of CJ's Toothpaste",
+				name = "GenericToothpaste",
 				value = 3,
 				canBeSold = true
 			},
 			// Airline Tickets
 			new Item()
 			{
-				name = "Adios Airlines Ticket",
+				name = "AirlineTicket1",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Air Emu Ticket",
+				name = "AirlineTicket2",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Air Herler Airline Ticket",
+				name = "AirlineTicket3",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Caipira Airways Ticket",
+				name = "AirlineTicket4",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "FlyUS Airlines Ticket",
+				name = "AirlineTicket5",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "MyFly Airlines Ticket",
+				name = "AirlineTicket6",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Private Charter Airline Ticket",
+				name = "AirlineTicket7",
 				value = 1500,
 				canBeSold = true
 			},
 			// Alcohol
 			new Item()
 			{
-				name = "Bottle of Ampheterate",
+				name = "AlcoholItem1",
 				value = 75,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Bleuter'd Champagne",
+				name = "AlcoholItem2",
 				value = 750,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Bourgeoix Cognag",
+				name = "AlcoholItem3",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Cardiaque Brandy",
+				name = "AlcoholItem4",
 				value = 25,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Costa Del Perro",
+				name = "AlcoholItem5",
 				value = 300,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Culmanex",
+				name = "AlcoholItem6",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of NOGO Vodka",
+				name = "AlcoholItem7",
 				value = 10,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Tequilya Tequila",
+				name = "AlcoholItem8",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of The Mount Whiskey",
+				name = "AlcoholItem9",
 				value = 25,
 				canBeSold = true
 			},
 			// Clothing
 			new Item()
 			{
-				name = "Gold Ring",
+				name = "ClothingRing1",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "IFruit Shoes",
+				name = "ClothingBrandIFruit1",
 				value = 750,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "IFruit Smart Watch",
+				name = "ClothingBrandIFruit2",
 				value = 300,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Kronos Timepiece",
+				name = "ClothingBrandKronos1",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Kronox Watch",
+				name = "ClothingBrandKronox1",
 				value = 125,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Panoramic Fitness Wristband",
+				name = "ClothingBrandPanoramic1",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Peckerwood T-Shirt",
+				name = "ClothingBrandPeckerwood1",
 				value = 15,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Silver Artisan Ring",
+				name = "ClothingRing2",
 				value = 75,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Silver Ring",
+				name = "ClothingRing3",
 				value = 250,
 				canBeSold = true
 			},
 			// Drugs
 			new Item()
 			{
-				name = "1 MDMA Pill",
+				name = "DrugsMDMA1",
 				value = 20,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "2 MDMA Pills",
+				name = "DrugsMDMA2",
 				value = 40,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "3 MDMA Pills",
+				name = "DrugsMDMA3",
 				value = 60,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Bottle of Paraliz (100mg)",
+				name = "DrugsBottle1",
 				value = 1000,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Box of Alco-Patch (14mg)",
+				name = "DrugsBox1",
 				value = 250,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Box of Delladamol (15mg)",
-				value = 300,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Box of Mollis (50mg)",
-				value = 150,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Box of Mulis (50mg )",
-				value = 500,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Cocaine (1g)",
-				value = 120,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Cocaine (3.5g)",
-				value = 450,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Cocaine (1Oz)",
-				value = 3360,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Crack Cocaine (1g)",
-				value = 120,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Crack Cocaine (3.5g)",
-				value = 450,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Crack Cocaine (1Oz)",
-				value = 666,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Doctor Kush Northern Lights (1/8th)",
-				value = 30,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Heroin (0.1g)",
-				value = 30,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Heroin (1g)",
-				value = 190,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Heroin (1Oz)",
-				value = 5320,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Ketamine (1g)",
-				value = 120,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Ketamine (3.5g)",
-				value = 450,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Ketamine (1Oz)",
-				value = 3360,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "LSD (Single Tab)",
-				value = 15,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "LSD (Half Sheet)",
-				value = 750,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "LSD (Full Sheet)",
-				value = 1500,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Meth (0.25g)",
-				value = 15,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Eight Ball Meth (3.5g)",
-				value = 200,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Meth (1Oz)",
-				value = 1960,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "Mile High Organics Purple Haze (1oz)",
-				value = 150,
-				canBeSold = true
-			},
-			new Item()
-			{
-				name = "SeaGrass Herbals Gorilla Glue #9 (1g)",
+				name = "DrugsBox2",
 				value = 5,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Shrooms (1/8th)",
-				value = 20,
+				name = "DrugsBox3",
+				value = 300,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Shrooms (1Oz)",
+				name = "DrugsBox4",
+				value = 5,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsBox5",
+				value = 150,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsBox6",
+				value = 500,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCocaine1",
+				value = 120,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCocaine2",
+				value = 450,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCocaine3",
+				value = 3360,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCrackCocaine1",
+				value = 120,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCrackCocaine2",
+				value = 450,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsCrackCocaine3",
+				value = 666,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsWeed1",
+				value = 30,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsHeroin1",
+				value = 30,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsHeroin2",
+				value = 190,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsHeroin3",
+				value = 5320,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsKetamine1",
+				value = 120,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsKetamine2",
+				value = 450,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsKetamine3",
+				value = 3360,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsLSD1",
+				value = 15,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsLSD2",
+				value = 750,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsLSD3",
+				value = 1500,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsMeth1",
+				value = 15,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsMeth2",
 				value = 200,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Smoke on the Water Citral Glue (1lb)",
+				name = "DrugsMeth3",
+				value = 1960,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsWeed2",
+				value = 150,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsGlue1",
+				value = 5,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsShrooms1",
+				value = 20,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsShrooms2",
+				value = 200,
+				canBeSold = true
+			},
+			new Item()
+			{
+				name = "DrugsGlue2",
 				value = 1100,
 				canBeSold = true
 			},
 			// Security Items
 			new Item()
 			{
-				name = "BAWSAQ Username & Password",
+				name = "SecurityUserPass1",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Fleeca Bank Security Codes",
+				name = "SecurityCodes1",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Gruppe Sechs Security Codes",
+				name = "SecurityCodes2",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Gruppe Sechs Van Routes",
+				name = "SecurityRoutes1",
 				value = 1000,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Humane Labs Delivery Routes",
+				name = "SecurityRoutes2",
 				value = 750,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Humane Labs Security Codes",
+				name = "SecurityCodes3",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "LCN Username & Password",
+				name = "SecurityUserPass2",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "LifeInvader Username & Password",
+				name = "SecurityUserPass3",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "LSPD Auto Impound Gate Code",
+				name = "SecurityCodes4",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Maze Bank Security Codes",
+				name = "SecurityCodes5",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Merryweather OP Locations",
+				name = "SecurityLocations1",
 				value = 3000,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Merryweather Security Codes",
+				name = "SecurityCodes6",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Old Union Deposity Security Codes",
+				name = "SecurityCodes7",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pacific Allied Shipyard Security Badge",
+				name = "SecurityBadge1",
 				value = 1250,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Schlongberg Sachs Security Codes",
+				name = "SecurityCodes8",
 				value = 1500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Stolen LifeInvader Usernames & Passwords",
+				name = "SecurityUserPass4",
 				value = 5000,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Total Bankers Security Codes",
+				name = "SecurityCodes9",
 				value = 1500,
 				canBeSold = true
 			},
 			// Technology
 			new Item()
 			{
-				name = "E-Reader",
+				name = "TechEReader",
 				value = 75,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "iFruit 9iX",
+				name = "TechBrandIFruit1",
 				value = 500,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "IFruit Tablet",
+				name = "TechBrandIFruit2",
 				value = 200,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "LifeInvader II Microcomputer",
+				name = "TechBrandLifeInvader",
 				value = 200,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Panoramic Smartphone",
+				name = "TechBrandPanoramic1",
 				value = 125,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Panoramic Tablet",
+				name = "TechBrandPanoramic2",
 				value = 150,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Panoramic Winblows 98 Tablet",
+				name = "TechBrandPanoramic3",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pre-Paid Badger Cellphone",
+				name = "TechCellphone1",
 				value = 75,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pre-Paid BitterSweet Cellphone",
+				name = "TechCellphone2",
 				value = 20,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pre-Paid Panoramic Cellphone",
+				name = "TechCellphone3",
 				value = 50,
 				canBeSold = true
 			},
 			new Item()
 			{
-				name = "Pre-Paid Whiz Cellphone",
+				name = "TechCellphone4",
 				value = 50,
 				canBeSold = true
 			},
 			// Trash
 			new Item()
 			{
-				name = "Ammu-Nation Receipt",
+				name = "TrashReceipt1",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Daily Globe Newspaper",
+				name = "TrashNewspaper1",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Daily Rag Newspaper",
+				name = "TrashNewspaper2",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Fat Losers Liposuction Receipt",
+				name = "TrashReceipt2",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Goldberg Ligner & Shyster Lawfirm Card",
+				name = "TrashCard1",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Hammerstein & Faust Lawfirm Card",
+				name = "TrashCard2",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Hi-Men Bar Tab",
+				name = "TrashBarTab1",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Hookies Bar Tab",
+				name = "TrashBarTab2",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "J's Bonds Business Card",
+				name = "TrashCard3",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Las Cuadras Bar Tab",
+				name = "TrashBarTab3",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Laundromat Receipts",
+				name = "TrashReceipt3",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Limey's Juice and Smoothies Bar Tab",
+				name = "TrashBarTab4",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Los Santos Customs Receipt",
+				name = "TrashReceipt4",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Losing San Andreas Lotto Ticket",
+				name = "TrashLottoTicket",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Mirror Park Tavern Bar Tab",
+				name = "TrashBarTab5",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Mojito Inn Bar Tab",
+				name = "TrashBarTab6",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "National Transfer & Storage Co. Receipt",
+				name = "TrashReceipt5",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Out of Towners Bar Tab",
+				name = "TrashBarTab7",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Pipeline Inn Bar Tab",
+				name = "TrashBarTab8",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Pitchers Bar Tab",
+				name = "TrashBarTab9",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Shenanigan's Bar Tab",
+				name = "TrashBarTab10",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Singleton's Bar Tab",
+				name = "TrashBarTab11",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Slaughter Slaughter & Slaughter Lawfirm Card",
+				name = "TrashCard4",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Tequi-la-la Bar Tab",
+				name = "TrashBarTab12",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "The Bay Bar Bar Tab",
+				name = "TrashBarTab13",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "The Hen House Bar Tab",
+				name = "TrashBarTab14",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "The Lust Resort Bar Tab",
+				name = "TrashBarTab15",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Used Toothbrush",
+				name = "TrashToothbrush",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Vangelico Receipt",
+				name = "TrashReceipt6",
 				value = 0,
 				canBeSold = false
 			},
 			new Item()
 			{
-				name = "Yellow Jack Inn Bar Tab",
+				name = "TrashBarTab16",
 				value = 0,
 				canBeSold = false
 			}
 		};
 
-		// Define all of the default food items
+		// Define all of the default food items as localization values
 		public static List<Food> defaultFood = new List<Food>()
 		{
 			// Snacks & Other Food
 			new Food()
 			{
-				name = "Bag of Bavarian Car Key Party Phat Chips",
+				name = "SnackChips1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Big Cheese Phat Chips",
+				name = "SnackChips2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Chipotle Wheatgrass Phat Chips",
+				name = "SnackChips3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Dry Greek Rub Greens Phat Chips",
+				name = "SnackChips4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Funky Honey Mustard Greens & Ketchup Prawns Phat Chips",
+				name = "SnackChips5",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Habanero Phat Chips",
+				name = "SnackChips6",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Paprika Phat Chips",
+				name = "SnackChips7",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Salt & Sauce Phat Chips",
+				name = "SnackChips8",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Sticky Ribs Phat Chips",
+				name = "SnackChips9",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Super Salt Phat Chips",
+				name = "SnackChips10",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bologna Sandwich",
+				name = "SnackSandwich",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bottle of Arctic Douche Electrolyte",
+				name = "SnackEnergyDrink1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bottle of Icicle Fire Electrolyte",
+				name = "SnackEnergyDrink2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bottle of Yellow Snow Electrolyte",
+				name = "SnackEnergyDrink3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Box of Apple Love Juice",
+				name = "SnackJuice1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Box of Orange Love Juice",
+				name = "SnackJuice2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Can of E-Cola",
+				name = "SnackCola1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Can of Orang-O-Tang",
+				name = "SnackCola2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Can of Sprunk",
+				name = "SnackCola3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Candybox Chocolate Bar",
+				name = "SnackCandy1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Captain's Log Sno-Caps",
+				name = "SnackCandy2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cherry Popper Chocolate Chunk Ice-Cream Bar",
+				name = "SnackIceCreamBar1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cherry Popper Raspberry Ripple Ice-Cream Bar",
+				name = "SnackIceCreamBar2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cup of Bean Machine Coffee",
+				name = "SnackCoffee1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cup of Hit 'N' Run Coffee",
+				name = "SnackCoffee2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "EarthQuakes Crunch Bar",
+				name = "SnackCandy3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "EgoChaser",
+				name = "SnackCandy4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Metorite Bar",
+				name = "SnackCandy5",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "P's & Q's",
+				name = "SnackCandy6",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Rusty Brown Donut",
+				name = "SnackDonut",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Uder Milken Ice-Cream Bar",
+				name = "SnackIceCreamBar3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Zebra Bar",
+				name = "SnackCandy7",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bag of Norwegian Salmon Rancher Surprise Phat Chips",
+				name = "SnackChips11",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bag of Radical Sour Cream & Black Liquorice Quinoa Phat Chips",
+				name = "SnackChips12",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Can of Junk Energy",
+				name = "SnackEnergyDrink4",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Release Gum",
+				name = "SnackCandy8",
 				healsPlayer = false
 			},
 			// Burger Shot
 			new Food()
 			{
-				name = "Burger Shot Bleeder Burger",
+				name = "BrandBurgerShot1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Meat-Free Burger",
+				name = "BrandBurgerShot2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Meat-Shavings Burger",
+				name = "BrandBurgerShot3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Milkshake",
+				name = "BrandBurgerShot4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot MoneyShot Burger",
+				name = "BrandBurgerShot5",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Pork-Hole Burger",
+				name = "BrandBurgerShot6",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Torpedo Burger",
+				name = "BrandBurgerShot7",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Burger Shot Heart-Stopper Burger",
+				name = "BrandBurgerShot8",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Burger Shot Meat-Shake",
+				name = "BrandBurgerShot9",
 				healsPlayer = false
 			},
 			// Cluckin' Bell
 			new Food()
 			{
-				name = "Cluckin' Bell Milkshake",
+				name = "BrandCluckinBell1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cluckin' Big Meal",
+				name = "BrandCluckinBell2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cluckin' Huge Meal",
+				name = "BrandCluckinBell3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cluckin' Little Meal",
+				name = "BrandCluckinBell4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Cluckin' Salad Meal",
+				name = "BrandCluckinBell5",
+				healsPlayer = true
+			},
+			// Silce 'N' Dice
+			new Food()
+			{
+				name = "BrandSliceNDice1",
+				healsPlayer = true
+			},
+			new Food()
+			{
+				name = "BrandSliceNDice2",
+				healsPlayer = true
+			},
+			new Food()
+			{
+				name = "BrandSliceNDice3",
+				healsPlayer = true
+			},
+			new Food()
+			{
+				name = "BrandSliceNDice4",
+				healsPlayer = true
+			},
+			new Food()
+			{
+				name = "BrandSliceNDice5",
 				healsPlayer = true
 			},
 			// Taco Bomb
 			new Food()
 			{
-				name = "Taco Bomb Cheesy Meat Flappers",
+				name = "BrandTacoBomb1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Bomb El Matador Verde Breakfast Burrito",
+				name = "BrandTacoBomb2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Bomb Hot Mess Deep Fried Salad",
+				name = "BrandTacoBomb3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Bomb Paco the Taco's Lil' Gringo Meal",
+				name = "BrandTacoBomb4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Bomb Volcanic Mudsplatter Nachos",
+				name = "BrandTacoBomb5",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Farmer Combo Meal",
+				name = "BrandTacoBomb6",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Libre Luchadore Huevos Breakfast Burrito",
+				name = "BrandTacoBomb7",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Libre Punto Grande Meal",
+				name = "BrandTacoBomb8",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Taco Bomb 2lb Foaming Beef-ish Bazooka",
+				name = "BrandTacoBomb9",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Taco Bomb Chimichingado Chiquito",
+				name = "BrandTacoBomb10",
 				healsPlayer = false
 			},
 			// Up-n-Atom
 			new Food()
 			{
-				name = "Up-n-Atom Chicken Liver Surprise",
+				name = "BrandUpNAtom1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Up-n-Atom Footlong Chili-Dog",
+				name = "BrandUpNAtom2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Up-n-Atom French Fries",
+				name = "BrandUpNAtom3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Up-n-Atom Triple Burger",
+				name = "BrandUpNAtom4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Up-n-Atom Bacon-Triple Cheese Melt",
+				name = "BrandUpNAtom5",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Up-n-Atom Extra Creamy Jumbo Shake",
+				name = "BrandUpNAtom6",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Up-n-Atom Triple Burger Meal",
+				name = "BrandUpNAtom7",
 				healsPlayer = false
 			},
 			// Other Food Chains
 			new Food()
 			{
-				name = "Attack-A-Taco Taco",
+				name = "BrandGeneric1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Bishop's Chicken Chicken Sandwich",
+				name = "BrandGeneric2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "BITE! Salad",
+				name = "BrandGenericBITE1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "BITE! Sub-Sandwich",
+				name = "BrandGenericBITE2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "BITE! Wrap",
+				name = "BrandGenericBITE3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Chihuahua Hotdog",
+				name = "BrandGeneric3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Famous Hamburgers Hamburger Meal",
+				name = "BrandGeneric4",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Horny's Burger Meal",
+				name = "BrandGenericHornys1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Horny's HashBrowns",
+				name = "BrandGenericHornys2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Horny's Taco Meal",
+				name = "BrandGenericHornys3",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Slice 'N' Dice Burger",
+				name = "BrandGeneric5",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Slice 'N' Dice Donut",
+				name = "BrandGenericWigWam1",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Slice 'N' Dice Hotdog",
+				name = "BrandGenericWigWam2",
 				healsPlayer = true
 			},
 			new Food()
 			{
-				name = "Slice 'N' Dice Milkshake",
-				healsPlayer = true
-			},
-			new Food()
-			{
-				name = "Slice of Pizza This... Pizza",
-				healsPlayer = true
-			},
-			new Food()
-			{
-				name = "Slice of Slice 'N' Dice Pizza",
-				healsPlayer = true
-			},
-			new Food()
-			{
-				name = "WigWam Burger 20pc Chicken Nugget",
-				healsPlayer = true
-			},
-			new Food()
-			{
-				name = "WigWam Burger Geronimo Wings",
-				healsPlayer = true
-			},
-			new Food()
-			{
-				name = "WigWam Burger Rings of Fire",
+				name = "BrandGenericWigWam3",
 				healsPlayer = true
 			},
 			// Alcohol
 			new Food()
 			{
-				name = "Bottle of Blarney's Stout Beer",
+				name = "AlcoholFood1",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bottle of Dusche Beer",
+				name = "AlcoholFood2",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bottle of Jakey's Lager",
+				name = "AlcoholFood3",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bottle of Logger Beer",
+				name = "AlcoholFood4",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bottle of Patriot Beer",
+				name = "AlcoholFood5",
 				healsPlayer = false
 			},
 			new Food()
 			{
-				name = "Bottle of Piswasser",
+				name = "AlcoholFood6",
 				healsPlayer = false
 			}
 		};
 
-		// Define all of the default weapons
+		// Define all of the default weapons as localization values
 		public static List<Weapon> defaultWeapons = new List<Weapon>()
 		{
 			new Weapon()
@@ -1324,7 +1325,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			},
 			new Weapon()
 			{
-				weaponName = "Sawn-Off Shotgun",
+				weaponName = "SawnOff",
 				weaponHash = WeaponHash.SawnOffShotgun
 			}
 		};
