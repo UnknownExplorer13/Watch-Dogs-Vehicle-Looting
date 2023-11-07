@@ -136,6 +136,7 @@ namespace Watch_Dogs_Vehicle_Looting
 
 				if (foodItem.healsPlayer && Game.Player.Character.Health != Game.Player.Character.MaxHealth)
 				{
+					// Heal player by foodItem's healValue or to max health if healValue is "healMax"
 					if (foodItem.healValue == "healSmall") Game.Player.Character.Health += config.settings.foodHealing.healSmall;
 					else if (foodItem.healValue == "healMedium") Game.Player.Character.Health += config.settings.foodHealing.healMedium;
 					else if (foodItem.healValue == "healLarge") Game.Player.Character.Health += config.settings.foodHealing.healLarge;
