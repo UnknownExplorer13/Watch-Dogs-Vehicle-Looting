@@ -12,7 +12,7 @@ Fork of the original [Watch Dogs Vehicle Looting](https://github.com/CamK06/Watc
 <h2>Installing</h2>
 </div>
 
-Get the [latest release](https://github.com/UnknownExplorer13/Watch-Dogs-Vehicle-Looting/releases/latest) from the releases page and put the scripts folder in your GTA V root directory.
+Get the [latest release](https://github.com/UnknownExplorer13/Watch-Dogs-Vehicle-Looting/releases/latest) from the releases page and put the files in the scripts folder in your GTA V root directory.
 
 <div align="center">
 <h2>Changes</h2>
