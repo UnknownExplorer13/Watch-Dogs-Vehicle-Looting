@@ -6,7 +6,7 @@
 <h2>About</h2>
 </div>
 
-Fork of the original [Watch Dogs Vehicle Looting](https://github.com/CamK06/Watch-Dogs-Vehicle-Looting) mod  combined with the [Lore-Friendly Watch Dogs Vehicle Looting Item List](https://www.gta5-mods.com/misc/lore-friendly-watchdogs-vehicle-looting-item-list) mod by default with some of my own changes included.
+Fork of the original [Watch Dogs Vehicle Looting](https://github.com/CamK06/Watch-Dogs-Vehicle-Looting) mod combined with the [Lore-Friendly Watch Dogs Vehicle Looting Item List](https://www.gta5-mods.com/misc/lore-friendly-watchdogs-vehicle-looting-item-list) mod by default with some of my own changes included.
 
 <div align="center">
 <h2>Installing</h2>
