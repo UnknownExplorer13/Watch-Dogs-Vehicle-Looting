@@ -107,6 +107,27 @@ namespace Watch_Dogs_Vehicle_Looting
 			File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
 		}
 
+		public static void AddVehModelException(string vehClass, string vehModel)
+		{
+			// Iterate over each blocked class to find the right one
+			foreach (BlockedClass blocked in config.blockedClasses)
+			{
+				if (blocked.className == vehClass)
+				{
+					// Add model to exception list if it's not already there
+					if (!blocked.modelExceptions.Contains(vehModel))
+					{
+						// Add the model
+						blocked.modelExceptions.Add(vehModel);
+						blockedClassExceptions.Add(new Model(vehModel));
+
+						// Save the configuration json
+						File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
+					}
+				}
+			}
+		}
+
 		public static void LootVehicle(Vehicle veh)
 		{
 			Random r = new Random();

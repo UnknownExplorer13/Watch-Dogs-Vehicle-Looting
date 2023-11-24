@@ -85,6 +85,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			if (Mod.config.settings.devMode)
 			{
 				if(e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
+				else if(Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift) Mod.AddVehModelException(Game.Player.Character.CurrentVehicle.ClassType.ToString(), Game.Player.Character.CurrentVehicle.DisplayName.ToLower());
 			}
 
 			// If the pawnshop use key is pressed
