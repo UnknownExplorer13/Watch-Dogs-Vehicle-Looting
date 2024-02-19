@@ -113,20 +113,16 @@ namespace Watch_Dogs_Vehicle_Looting
 							InventoryManagement.SaveInventory(inventory);
 							World.CurrentDayTime = new TimeSpan(World.CurrentDayTime.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 							Game.Player.Money = Game.Player.Money + itemValue;
+							StringBuilder notification = new StringBuilder(Localization.Localize.GetLangEntry("SoldItems"));
+							notification.Replace("{itemCount}", $"{itemCount}");
+							notification.Replace("{itemValue}", $"{itemValue}");
 
 							if (itemCount > 1)
 							{
-								StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("SoldItems"));
-								notification.Replace("{itemCount}", $"{itemCount}");
-								notification.Replace("{itemValue}", $"{itemValue}");
-
 								UI.Notify(notification.ToString());
 							}
 							else if (itemCount == 1)
 							{
-								StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("SoldItems"));
-								notification.Replace("{itemCount}", $"{itemCount}");
-								notification.Replace("{itemValue}", $"{itemValue}");
 								notification.Replace("items", "item");
 
 								UI.Notify(notification.ToString());

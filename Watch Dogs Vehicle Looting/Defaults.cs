@@ -10,7 +10,7 @@ namespace Watch_Dogs_Vehicle_Looting
 		// Define all of the default pawn items as localization values
 		public static List<Item> defaultItems = new List<Item>()
 		{
-			// Generic
+			#region Generic
 			new Item()
 			{
 				name = "GenericMagazine1",
@@ -131,7 +131,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 3,
 				canBeSold = true
 			},
-			// Airline Tickets
+			#endregion
+			#region Airline Tickets
 			new Item()
 			{
 				name = "AirlineTicket1",
@@ -174,7 +175,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 1500,
 				canBeSold = true
 			},
-			// Alcohol
+			#endregion
+			#region Alcohol
 			new Item()
 			{
 				name = "AlcoholItem1",
@@ -229,7 +231,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 25,
 				canBeSold = true
 			},
-			// Clothing
+			#endregion
+			#region Clothing
 			new Item()
 			{
 				name = "ClothingRing1",
@@ -284,7 +287,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 250,
 				canBeSold = true
 			},
-			// Drugs
+			#endregion
+			#region Drugs
 			new Item()
 			{
 				name = "DrugsMDMA1",
@@ -489,7 +493,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 1100,
 				canBeSold = true
 			},
-			// Security Items
+			#endregion
+			#region Security Items
 			new Item()
 			{
 				name = "SecurityUserPass1",
@@ -592,7 +597,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 1500,
 				canBeSold = true
 			},
-			// Technology
+			#endregion
+			#region Technology
 			new Item()
 			{
 				name = "TechEReader",
@@ -659,7 +665,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 50,
 				canBeSold = true
 			},
-			// Trash
+			#endregion
+			#region Trash
 			new Item()
 			{
 				name = "TrashReceipt1",
@@ -840,12 +847,13 @@ namespace Watch_Dogs_Vehicle_Looting
 				value = 0,
 				canBeSold = false
 			}
+			#endregion
 		};
 
 		// Define all of the default food items as localization values
 		public static List<Food> defaultFood = new List<Food>()
 		{
-			// Snacks & Other Food
+			#region Snacks & Other Food
 			new Food()
 			{
 				name = "SnackChips1",
@@ -1062,7 +1070,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = false,
 				healValue = "healNone"
 			},
-			// Burger Shot
+			#endregion
+			#region Burger Shot
 			new Food()
 			{
 				name = "BrandBurgerShot1",
@@ -1117,7 +1126,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = false,
 				healValue = "healNone"
 			},
-			// Cluckin' Bell
+			#endregion
+			#region Cluckin' Bell
 			new Food()
 			{
 				name = "BrandCluckinBell1",
@@ -1148,7 +1158,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = true,
 				healValue = "healSmall"
 			},
-			// Silce 'N' Dice
+			#endregion
+			#region Silce 'N' Dice
 			new Food()
 			{
 				name = "BrandSliceNDice1",
@@ -1179,7 +1190,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = true,
 				healValue = "healMedium"
 			},
-			// Taco Bomb
+			#endregion
+			#region Taco Bomb
 			new Food()
 			{
 				name = "BrandTacoBomb1",
@@ -1240,7 +1252,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = false,
 				healValue = "healNone"
 			},
-			// Up-n-Atom
+			#endregion
+			#region Up-n-Atom
 			new Food()
 			{
 				name = "BrandUpNAtom1",
@@ -1283,7 +1296,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = false,
 				healValue = "healNone"
 			},
-			// Other Food Chains
+			#endregion
+			#region Other Food Chains
 			new Food()
 			{
 				name = "BrandGeneric1",
@@ -1368,7 +1382,8 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = true,
 				healValue = "healMedium"
 			},
-			// Alcohol
+			#endregion
+			#region Alcohol
 			new Food()
 			{
 				name = "AlcoholFood1",
@@ -1405,21 +1420,26 @@ namespace Watch_Dogs_Vehicle_Looting
 				healsPlayer = false,
 				healValue = "healNone"
 			}
+			#endregion
 		};
 
 		// Define all of the default weapons as localization values
 		public static List<Weapon> defaultWeapons = new List<Weapon>()
 		{
+			#region Handguns
 			new Weapon()
 			{
 				weaponName = "Pistol",
 				weaponHash = WeaponHash.Pistol
 			},
+			#endregion
+			#region Shotguns
 			new Weapon()
 			{
 				weaponName = "SawnOff",
 				weaponHash = WeaponHash.SawnOffShotgun
 			}
+			#endregion
 		};
 
 		// Define all of the default pawn shops
