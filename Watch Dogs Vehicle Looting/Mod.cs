@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Collections.Generic;
 using GTA;
 using GTA.Math;
 using GTA.Native;
 using Newtonsoft.Json;
 using Watch_Dogs_Vehicle_Looting.Classes;
 using Watch_Dogs_Vehicle_Looting.Classes.Items;
-using Watch_Dogs_Vehicle_Looting.Localization;
-using System.Text;
 
 namespace Watch_Dogs_Vehicle_Looting
 {

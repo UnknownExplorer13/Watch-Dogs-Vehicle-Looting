@@ -1,8 +1,5 @@
-using GTA;
-using System;
-using System.IO;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+using GTA;
 
 namespace Watch_Dogs_Vehicle_Looting.Localization
 {
