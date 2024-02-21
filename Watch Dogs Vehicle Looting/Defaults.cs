@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Watch_Dogs_Vehicle_Looting.Classes.Items;
-using GTA.Native;
+using GTA;
 using Watch_Dogs_Vehicle_Looting.Classes;
+using Watch_Dogs_Vehicle_Looting.Classes.Items;
 
 namespace Watch_Dogs_Vehicle_Looting
 {
@@ -1424,17 +1424,17 @@ namespace Watch_Dogs_Vehicle_Looting
 		};
 
 		// Define all of the default weapons as localization values
-		public static List<Weapon> defaultWeapons = new List<Weapon>()
+		public static List<Classes.Items.Weapon> defaultWeapons = new List<Classes.Items.Weapon>()
 		{
 			#region Handguns
-			new Weapon()
+			new Classes.Items.Weapon()
 			{
 				weaponName = "Pistol",
 				weaponHash = WeaponHash.Pistol
 			},
 			#endregion
 			#region Shotguns
-			new Weapon()
+			new Classes.Items.Weapon()
 			{
 				weaponName = "SawnOff",
 				weaponHash = WeaponHash.SawnOffShotgun

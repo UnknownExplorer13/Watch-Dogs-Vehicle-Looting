@@ -1,6 +1,6 @@
-﻿using GTA.Native;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using GTA;
 
 namespace Watch_Dogs_Vehicle_Looting.Classes.Items
 {

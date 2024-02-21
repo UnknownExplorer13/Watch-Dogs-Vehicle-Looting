@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using GTA;
 using GTA.Math;
-using GTA.Native;
+using GTA.UI;
 using Watch_Dogs_Vehicle_Looting.Classes;
 
 namespace Watch_Dogs_Vehicle_Looting
@@ -27,7 +27,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			Aborted += Mod.OnAbort;
 			KeyDown += OnKeyDown;
 
-			UI.Notify(Localization.Localize.GetLangEntry("Initialized"));
+			Notification.Show(Localization.Localize.GetLangEntry("Initialized"));
 		}
 
 		private void OnTick(object sender, EventArgs e)
@@ -67,11 +67,11 @@ namespace Watch_Dogs_Vehicle_Looting
 						StringBuilder subtitle = new StringBuilder (Localization.Localize.GetLangEntry("CanSell"));
 						subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
 
-						UI.ShowSubtitle(subtitle.ToString(), 1);
+						GTA.UI.Screen.ShowSubtitle(subtitle.ToString(), 1);
 					}
 					// Player is wanted
 					else if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel != 0)
-						UI.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
+						GTA.UI.Screen.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
 			}
 		}
 
@@ -95,14 +95,14 @@ namespace Watch_Dogs_Vehicle_Looting
 					if (World.GetDistance(Game.Player.Character.Position, markerPos) <= 1.25f && inventory.pawnItems.Count >= 1)
 					{
 						// Sell every item
-						Game.FadeScreenOut(1000);
-						Game.Player.Character.FreezePosition = true;
+						GTA.UI.Screen.FadeOut(1000);
+						Game.Player.Character.IsPositionFrozen = true;
 						Wait(1000);
 						int itemCount = inventory.pawnItems.Count;
 						int itemValue = inventory.totalValue;
 						Wait(500);
-						Game.Player.Character.FreezePosition = false; 
-						Game.FadeScreenIn(1000);
+						Game.Player.Character.IsPositionFrozen = false;
+						GTA.UI.Screen.FadeIn(1000);
 
 						bool caughtByCops = false;
 						if (new Random().Next(0, 100) >= 80) caughtByCops = true;
@@ -111,7 +111,7 @@ namespace Watch_Dogs_Vehicle_Looting
 							inventory.pawnItems.Clear();
 							inventory.totalValue = 0;
 							InventoryManagement.SaveInventory(inventory);
-							World.CurrentDayTime = new TimeSpan(World.CurrentDayTime.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
+							World.CurrentTimeOfDay = new TimeSpan(World.CurrentTimeOfDay.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 							Game.Player.Money = Game.Player.Money + itemValue;
 							StringBuilder notification = new StringBuilder(Localization.Localize.GetLangEntry("SoldItems"));
 							notification.Replace("{itemCount}", $"{itemCount}");
@@ -119,18 +119,18 @@ namespace Watch_Dogs_Vehicle_Looting
 
 							if (itemCount > 1)
 							{
-								UI.Notify(notification.ToString());
+								Notification.Show(notification.ToString());
 							}
 							else if (itemCount == 1)
 							{
 								notification.Replace("items", "item");
 
-								UI.Notify(notification.ToString());
+								Notification.Show(notification.ToString());
 							}
 						} 
 						else // If the cops are called
 						{
-							UI.Notify(Localization.Localize.GetLangEntry("CopsCalled"));
+							Notification.Show(Localization.Localize.GetLangEntry("CopsCalled"));
 							Game.Player.WantedLevel = 2;
 						}
 					}

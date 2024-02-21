@@ -8,6 +8,7 @@ using GTA.Native;
 using Newtonsoft.Json;
 using Watch_Dogs_Vehicle_Looting.Classes;
 using Watch_Dogs_Vehicle_Looting.Classes.Items;
+using GTA.UI;
 
 namespace Watch_Dogs_Vehicle_Looting
 {
@@ -184,7 +185,7 @@ namespace Watch_Dogs_Vehicle_Looting
 
 			StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("VehicleLooted"));
 			notification.Replace("{itemName}", $"{itemName}");
-			UI.Notify(notification.ToString());
+			Notification.Show(notification.ToString());
 		}
 
 		private static void Weapon(WeaponHash Weapon)
@@ -209,7 +210,7 @@ namespace Watch_Dogs_Vehicle_Looting
 		internal static void OnAbort(object sender, EventArgs e)
 		{
 			// Iterate over and remove each blip
-			foreach (Blip blip in blips) blip.Remove();
+			foreach (Blip blip in blips) blip.Delete();
 		}
 	}
 
