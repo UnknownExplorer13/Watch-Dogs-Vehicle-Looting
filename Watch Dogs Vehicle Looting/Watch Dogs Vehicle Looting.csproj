@@ -36,8 +36,8 @@
     <Reference Include="NewtonSoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\NewtonSoft.Json.13.0.3\lib\net45\NewtonSoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptHookVDotNet2, Version=2.10.13.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\ScriptHookVDotNet2.2.10.13\lib\net48\ScriptHookVDotNet2.dll</HintPath>
+    <Reference Include="ScriptHookVDotNet2, Version=2.11.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ScriptHookVDotNet2.2.11.6\lib\net48\ScriptHookVDotNet2.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
