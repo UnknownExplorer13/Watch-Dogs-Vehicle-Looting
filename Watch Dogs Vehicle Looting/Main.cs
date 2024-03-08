@@ -44,7 +44,7 @@ namespace Watch_Dogs_Vehicle_Looting
 
 
 			// If the player is driving a vehicle, try to loot it
-			if(Game.Player.Character.IsInVehicle() && Game.Player.Character.SeatIndex == VehicleSeat.Driver)
+			if (Game.Player.Character.IsInVehicle() && Game.Player.Character.SeatIndex == VehicleSeat.Driver)
 			{
 				// If the vehicle's class is not part of the blocked class list then loot it
 				if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && !Mod.blockedClassList.Contains(Game.Player.Character.CurrentVehicle.ClassType.ToString()))
