@@ -67,18 +67,20 @@ namespace Watch_Dogs_Vehicle_Looting
 				Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
 				foreach (PawnShop shop in Mod.config.pawnShops)
 				{
-					// Player is not wanted
-					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel == 0)
+					// Player inside the pawn shop marker and has items to sell
+					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1)
 					{
-						StringBuilder subtitle = new StringBuilder(Localization.Localize.GetLangEntry("CanSell"));
-						subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
+						if (!Mod.PlayerIsWanted()) // Player is not wanted so we show the sell message
+						{
+							StringBuilder subtitle = new StringBuilder(Localization.Localize.GetLangEntry("CanSell"));
+							subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
 
-						GTA.UI.Screen.ShowSubtitle(subtitle.ToString(), 1);
-					}
-					// Player is wanted
-					else if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel != 0)
-					{
-						GTA.UI.Screen.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
+							GTA.UI.Screen.ShowSubtitle(subtitle.ToString(), 1);
+						}
+						else // Player is wanted so we show the cannot sell when wanted message
+						{
+							GTA.UI.Screen.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
+						}
 					}
 				}
 			}
@@ -94,27 +96,25 @@ namespace Watch_Dogs_Vehicle_Looting
 			}
 
 			// If the pawnshop use key is pressed
-			if (e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && Game.Player.WantedLevel == 0)
+			if (e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && !Mod.PlayerIsWanted())
 			{
 				foreach(PawnShop shop in Mod.config.pawnShops)
 				{
 					// If the player is at a pawn shop
 					Vector3 markerPos = new Vector3(shop.markerX, shop.markerY, shop.markerZ);
 					Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
+
 					if (World.GetDistance(Game.Player.Character.Position, markerPos) <= 1.25f && inventory.pawnItems.Count >= 1)
 					{
 						// Sell every item
-						GTA.UI.Screen.FadeOut(1000);
-						Game.Player.Character.IsPositionFrozen = true;
-						Wait(1000);
 						int itemCount = inventory.pawnItems.Count;
 						int itemValue = inventory.totalValue;
-						Wait(500);
-						Game.Player.Character.IsPositionFrozen = false;
-						GTA.UI.Screen.FadeIn(1000);
+
+						Mod.PlaySellItemCinematic();
 
 						bool caughtByCops = false;
 						if (new Random().Next(0, 100) >= 80) caughtByCops = true;
+
 						if (!caughtByCops) // If the item is actually sold
 						{
 							inventory.pawnItems.Clear();

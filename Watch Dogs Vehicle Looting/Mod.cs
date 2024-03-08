@@ -225,6 +225,21 @@ namespace Watch_Dogs_Vehicle_Looting
 			Notification.Show(notification.ToString());
 		}
 
+		public static void PlaySellItemCinematic()
+		{
+			Screen.FadeOut(1000);
+			Game.Player.Character.IsPositionFrozen = true;
+			Script.Wait(1500);
+			Game.Player.Character.IsPositionFrozen = false;
+			Screen.FadeIn(1000);
+		}
+
+		public static bool PlayerIsWanted()
+		{
+			if (Game.Player.WantedLevel != 0) return true;
+			else return false;
+		}
+
 		private static void Weapon(WeaponHash Weapon)
 		{
 			// If the player does not have the weapon, give one to them
