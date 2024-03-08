@@ -1482,7 +1482,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			}
 		};
 
-		// Define all of the default blocked classes and model exceptions
+		// Define all of the blocked classes and default model exceptions
 		public static List<BlockedClass> defaultBlockedClasses = new List<BlockedClass>()
 		{
 			new BlockedClass()

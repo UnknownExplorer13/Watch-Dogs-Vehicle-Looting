@@ -48,7 +48,7 @@ namespace Watch_Dogs_Vehicle_Looting
 
 			// Configuration & Inventory
 			if (!File.Exists(modConfig)) File.WriteAllText(modConfig, JsonConvert.SerializeObject(new Configuration() { pawnShops = Defaults.defaultShops, blockedClasses = Defaults.defaultBlockedClasses, settings = new Settings() }, Formatting.Indented));
-			if(!File.Exists(inventories)) File.WriteAllText(inventories, JsonConvert.SerializeObject(new List<Inventory>(), Formatting.Indented));
+			if (!File.Exists(inventories)) File.WriteAllText(inventories, JsonConvert.SerializeObject(new List<Inventory>(), Formatting.Indented));
 		}
 
 		public static void LoadConfig()
@@ -70,13 +70,14 @@ namespace Watch_Dogs_Vehicle_Looting
 		public static void CreateBlips()
 		{
 			// Iterate over each pawnshop and create a blip
-			foreach(PawnShop shop in config.pawnShops)
+			foreach (PawnShop shop in config.pawnShops)
 			{
 				Blip newBlip = World.CreateBlip(new Vector3(shop.markerX, shop.markerY, shop.markerZ));
 				newBlip.IsShortRange = true;
 				newBlip.Sprite = BlipSprite.DollarBill;
 				newBlip.Color = BlipColor.Green;
 				newBlip.Name = Localization.Localize.GetLangEntry("PawnShop");
+
 				blips.Add(newBlip);
 			}
 		}
@@ -135,54 +136,91 @@ namespace Watch_Dogs_Vehicle_Looting
 			// Determine the loot item
 			string itemName = "";
 			ItemType type = RandomEnumValue<ItemType>();
-			if(type == ItemType.pawnItem)
+
+			#region Pawn Item
+			if (type == ItemType.pawnItem)
 			{
 				Item item = items[r.Next(items.Count)];
 				string localItemName = Localization.Localize.GetLangEntry(item.name);
-				if(item.canBeSold) // Add item to player inventory if it can be sold
+
+				if (item.canBeSold) // Add item to player inventory if it can be sold
 				{
 					itemName = localItemName + " ($" + item.value + ")";
 					inventory.pawnItems.Add(item);
 				}
 				else itemName = localItemName;  // Remove the " ($value)" part from the vehicle looted notification
+
 				inventory.totalValue += item.value;
 				InventoryManagement.SaveInventory(inventory);
 			}
-			else if(type == ItemType.food)
+			#endregion
+			#region Food
+			else if (type == ItemType.food)
 			{
 				Food foodItem = food[r.Next(food.Count)];
-				string localFoodItemName = Localization.Localize.GetLangEntry(foodItem.name);
-				itemName = localFoodItemName;
+				itemName = Localization.Localize.GetLangEntry(foodItem.name);
 
 				if (foodItem.healsPlayer && Game.Player.Character.Health != Game.Player.Character.MaxHealth)
 				{
 					// Heal player by foodItem's healValue or to max health if healValue is "healMax"
-					if (foodItem.healValue == "healSmall") Game.Player.Character.Health += config.settings.foodHealing.healSmall;
-					else if (foodItem.healValue == "healMedium") Game.Player.Character.Health += config.settings.foodHealing.healMedium;
-					else if (foodItem.healValue == "healLarge") Game.Player.Character.Health += config.settings.foodHealing.healLarge;
-					else Game.Player.Character.Health = Game.Player.Character.MaxHealth;
+					switch (foodItem.healValue)
+					{
+						case "healSmall":
+							{
+								Game.Player.Character.Health += config.settings.foodHealing.healSmall;
+								break;
+							}
+						case "healMedium":
+							{
+								Game.Player.Character.Health += config.settings.foodHealing.healMedium;
+								break;
+							}
+						case "healLarge":
+							{
+								Game.Player.Character.Health += config.settings.foodHealing.healLarge;
+								break;
+							}
+						case "healMax":
+							{
+								Game.Player.Character.Health = Game.Player.Character.MaxHealth;
+								break;
+							}
+
+						// Assume item doesn't actually heal and a mistake has been made in the item's setup
+						default:
+							{
+								break;
+							}
+					}
 				}
 			}
-			else if(type == ItemType.weapon)
+			#endregion
+			#region Weapon
+			else if (type == ItemType.weapon)
 			{
 				Classes.Items.Weapon weapon = weapons[r.Next(weapons.Count)];
+
+				// If player has weapon then reroll LootVehicle
 				if (Game.Player.Character.Weapons.HasWeapon(weapon.weaponHash))
 				{
 					LootVehicle(veh);
 					return;
 				}
-				string localWeaponName = Localization.Localize.GetLangEntry(weapon.weaponName);
-				itemName = localWeaponName;
+
+				itemName = Localization.Localize.GetLangEntry(weapon.weaponName);
 				Weapon(weapon.weaponHash);
 			}
-			else if(type == ItemType.money)
+			#endregion
+			#region Money
+			else if (type == ItemType.money)
 			{
 				int amount = r.Next(config.settings.money.minMoney, config.settings.money.maxMoney);
 				itemName = $"${amount}";
 				Game.Player.Money += amount;
 			}
+			#endregion
 
-			StringBuilder notification = new StringBuilder (Localization.Localize.GetLangEntry("VehicleLooted"));
+			StringBuilder notification = new StringBuilder(Localization.Localize.GetLangEntry("VehicleLooted"));
 			notification.Replace("{itemName}", $"{itemName}");
 			Notification.Show(notification.ToString());
 		}

@@ -33,9 +33,14 @@ namespace Watch_Dogs_Vehicle_Looting
 		private void OnTick(object sender, EventArgs e)
 		{
 			// Draw 3d markers at each pawn shop if necessary
-			if(Mod.config.settings.pawnShop3dMarkers)
-				foreach(PawnShop shop in Mod.config.pawnShops)
-					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 150) World.DrawMarker(MarkerType.VerticalCylinder, new Vector3(shop.markerX, shop.markerY, shop.markerZ - shop.markerZ / shop.markerZ), Vector3.Zero, Vector3.Zero, new Vector3(1.5f, 1.5f, 0.5f), Color.Yellow);
+			if (Mod.config.settings.pawnShop3dMarkers)
+			{
+				foreach (PawnShop shop in Mod.config.pawnShops)
+				{
+					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 150)
+						World.DrawMarker(MarkerType.VerticalCylinder, new Vector3(shop.markerX, shop.markerY, shop.markerZ - shop.markerZ / shop.markerZ), Vector3.Zero, Vector3.Zero, new Vector3(1.5f, 1.5f, 0.5f), Color.Yellow);
+				}
+			}
 
 
 			// If the player is driving a vehicle, try to loot it
@@ -61,17 +66,21 @@ namespace Watch_Dogs_Vehicle_Looting
 			{
 				Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
 				foreach (PawnShop shop in Mod.config.pawnShops)
+				{
 					// Player is not wanted
 					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel == 0)
 					{
-						StringBuilder subtitle = new StringBuilder (Localization.Localize.GetLangEntry("CanSell"));
+						StringBuilder subtitle = new StringBuilder(Localization.Localize.GetLangEntry("CanSell"));
 						subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
 
 						GTA.UI.Screen.ShowSubtitle(subtitle.ToString(), 1);
 					}
 					// Player is wanted
 					else if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1 && Game.Player.WantedLevel != 0)
+					{
 						GTA.UI.Screen.ShowSubtitle(Localization.Localize.GetLangEntry("CantSell"), 1);
+					}
+				}
 			}
 		}
 
@@ -80,12 +89,12 @@ namespace Watch_Dogs_Vehicle_Looting
 			// Developer commands
 			if (Mod.config.settings.devMode)
 			{
-				if(e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
-				if(Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift) Mod.AddVehModelException(Game.Player.Character.CurrentVehicle.ClassType.ToString(), Game.Player.Character.CurrentVehicle.DisplayName.ToLower());
+				if (e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
+				if (Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift) Mod.AddVehModelException(Game.Player.Character.CurrentVehicle.ClassType.ToString(), Game.Player.Character.CurrentVehicle.DisplayName.ToLower());
 			}
 
 			// If the pawnshop use key is pressed
-			if(e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && Game.Player.WantedLevel == 0)
+			if (e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && Game.Player.WantedLevel == 0)
 			{
 				foreach(PawnShop shop in Mod.config.pawnShops)
 				{
@@ -113,6 +122,7 @@ namespace Watch_Dogs_Vehicle_Looting
 							InventoryManagement.SaveInventory(inventory);
 							World.CurrentTimeOfDay = new TimeSpan(World.CurrentTimeOfDay.Hours + new Random().Next(1, itemCount), new Random().Next(1, 59), new Random().Next(1, 59));
 							Game.Player.Money = Game.Player.Money + itemValue;
+
 							StringBuilder notification = new StringBuilder(Localization.Localize.GetLangEntry("SoldItems"));
 							notification.Replace("{itemCount}", $"{itemCount}");
 							notification.Replace("{itemValue}", $"{itemValue}");
