@@ -19,6 +19,7 @@ namespace Watch_Dogs_Vehicle_Looting
 		{
 			Mod.VerifyFileStructure();
 			Mod.LoadConfig();
+			Mod.LoadAddons();
 			Mod.CreateBlips();
 			InventoryManagement.LoadInventories();
 

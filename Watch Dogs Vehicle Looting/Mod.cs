@@ -22,6 +22,7 @@ namespace Watch_Dogs_Vehicle_Looting
 		// Directories
 		public static string resourceDir = "scripts\\Watch Dogs Vehicle Looting";
 		public static string itemDir = $"{resourceDir}\\Items";
+		public static string addonDir = $"{resourceDir}\\Addons";
 
 		// Files
 		public static string modConfig = $"{resourceDir}\\modConfig.json";
@@ -40,6 +41,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			// Ensure that all necessary directories and files exist
 			if (!Directory.Exists(resourceDir)) Directory.CreateDirectory(resourceDir);
 			if (!Directory.Exists(itemDir)) Directory.CreateDirectory(itemDir);
+			if (!Directory.Exists(addonDir)) Directory.CreateDirectory(addonDir);
 
 			// Items
 			if (!File.Exists(foodItemsJson)) File.WriteAllText(foodItemsJson, JsonConvert.SerializeObject(Defaults.defaultFood, Formatting.Indented));
@@ -64,6 +66,47 @@ namespace Watch_Dogs_Vehicle_Looting
 			{
 				blockedClassList.Add(new string(blocked.className.ToCharArray()));
 				foreach (string model in blocked.modelExceptions) blockedClassExceptions.Add(new Model(model));
+			}
+		}
+
+		public static void LoadAddons()
+		{
+			string[] dirs = Directory.GetDirectories(addonDir); // Get all directories inside the addon directory
+			List<string> addons = new List<string>();
+			bool foundAddons = false;
+
+			// Make sure addon directories exist before continuing
+			if (dirs.Length != 0)
+			{
+				// There are addons installed
+				foundAddons = true;
+
+				// Look for addon files inside addon directories
+				foreach (string dir in dirs)
+				{
+					// Isolate the addon name
+					string addonName = dir.Substring(dir.LastIndexOf('\\') + 1);
+
+					// Store addon file's paths if they exist
+					addons.AddRange(Directory.GetFiles(dir, $"{addonName}_foodItems.json"));
+					addons.AddRange(Directory.GetFiles(dir, $"{addonName}_pawnItems.json"));
+				}
+			}
+
+			// Check if addons have been found
+			if (foundAddons)
+			{
+				// Make sure addon files exist before continuing
+				if (addons.Count != 0)
+				{
+					// Loop through each addon file
+					foreach (string addon in addons)
+					{
+						// Deserialize json file and add to correct list
+						if (addon.EndsWith("foodItems.json")) food.AddRange(JsonConvert.DeserializeObject<List<Food>>(File.ReadAllText(addon)));
+						else if (addon.EndsWith("pawnItems.json")) items.AddRange(JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(addon)));
+					}
+				}
 			}
 		}
 
