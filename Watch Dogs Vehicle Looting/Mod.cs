@@ -107,19 +107,22 @@ namespace Watch_Dogs_Vehicle_Looting
 			File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
 		}
 
-		public static void AddVehModelException(string vehClass, string vehModel)
+		public static void AddVehModelException(VehicleClass vehClass, string vehModel)
 		{
+			string strClass = vehClass.ToString();
+			string strModel = vehModel.ToLower();
+
 			// Iterate over each blocked class to find the right one
 			foreach (BlockedClass blocked in config.blockedClasses)
 			{
-				if (blocked.className == vehClass)
+				if (blocked.className == strClass)
 				{
 					// Add model to exception list if it's not already there
-					if (!blocked.modelExceptions.Contains(vehModel))
+					if (!blocked.modelExceptions.Contains(strModel))
 					{
 						// Add the model
-						blocked.modelExceptions.Add(vehModel);
-						blockedClassExceptions.Add(new Model(vehModel));
+						blocked.modelExceptions.Add(strModel);
+						blockedClassExceptions.Add(new Model(strModel));
 
 						// Save the configuration json
 						File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
@@ -223,21 +226,6 @@ namespace Watch_Dogs_Vehicle_Looting
 			StringBuilder notification = new StringBuilder(Localization.Localize.GetLangEntry("VehicleLooted"));
 			notification.Replace("{itemName}", $"{itemName}");
 			Notification.Show(notification.ToString());
-		}
-
-		public static void PlaySellItemCinematic()
-		{
-			Screen.FadeOut(1000);
-			Game.Player.Character.IsPositionFrozen = true;
-			Script.Wait(1500);
-			Game.Player.Character.IsPositionFrozen = false;
-			Screen.FadeIn(1000);
-		}
-
-		public static bool PlayerIsWanted()
-		{
-			if (Game.Player.WantedLevel != 0) return true;
-			else return false;
 		}
 
 		private static void Weapon(WeaponHash Weapon)

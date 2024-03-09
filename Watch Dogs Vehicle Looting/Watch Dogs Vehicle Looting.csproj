@@ -82,6 +82,7 @@
     <Compile Include="InventoryManagement.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Mod.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

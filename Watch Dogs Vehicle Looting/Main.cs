@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -37,8 +36,8 @@ namespace Watch_Dogs_Vehicle_Looting
 			{
 				foreach (PawnShop shop in Mod.config.pawnShops)
 				{
-					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 150)
-						World.DrawMarker(MarkerType.VerticalCylinder, new Vector3(shop.markerX, shop.markerY, shop.markerZ - shop.markerZ / shop.markerZ), Vector3.Zero, Vector3.Zero, new Vector3(1.5f, 1.5f, 0.5f), Color.Yellow);
+					if (Utils.PlayerIsInRange(new Vector3(shop.markerX, shop.markerY, shop.markerZ), 150f))
+						shop.DrawShopMarker();
 				}
 			}
 
@@ -46,31 +45,34 @@ namespace Watch_Dogs_Vehicle_Looting
 			// If the player is driving a vehicle, try to loot it
 			if (Game.Player.Character.IsInVehicle() && Game.Player.Character.SeatIndex == VehicleSeat.Driver)
 			{
+				Vehicle playerVehicle = Utils.GetPlayersCurrentVehicle();
+
 				// If the vehicle's class is not part of the blocked class list then loot it
-				if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && !Mod.blockedClassList.Contains(Game.Player.Character.CurrentVehicle.ClassType.ToString()))
+				if (!lootedVehicles.Contains(playerVehicle) && !Mod.blockedClassList.Contains(playerVehicle.ClassType.ToString()))
 				{
 					Wait(2500);
-					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(Game.Player.Character.CurrentVehicle);
-					lootedVehicles.Add(Game.Player.Character.CurrentVehicle);
+					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(playerVehicle);
+					lootedVehicles.Add(playerVehicle);
 				}
 				// If the vehicle's class is part of the blocked class list but the model is in the exception list then loot it
-				else if (!lootedVehicles.Contains(Game.Player.Character.CurrentVehicle) && Mod.blockedClassList.Contains(Game.Player.Character.CurrentVehicle.ClassType.ToString()) && Mod.blockedClassExceptions.Contains(Game.Player.Character.CurrentVehicle.Model))
+				else if (!lootedVehicles.Contains(playerVehicle) && Mod.blockedClassList.Contains(playerVehicle.ClassType.ToString()) && Mod.blockedClassExceptions.Contains(playerVehicle.Model))
 				{
 					Wait(2500);
-					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(Game.Player.Character.CurrentVehicle);
-					lootedVehicles.Add(Game.Player.Character.CurrentVehicle);
+					if (new Random().Next(1, 100) <= 75) Mod.LootVehicle(playerVehicle);
+					lootedVehicles.Add(playerVehicle);
 				}
 			}
 			// Otherwise, display the pawnshop sell message if necessary
 			else
 			{
 				Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
+
 				foreach (PawnShop shop in Mod.config.pawnShops)
 				{
 					// Player inside the pawn shop marker and has items to sell
-					if (World.GetDistance(Game.Player.Character.Position, new Vector3(shop.markerX, shop.markerY, shop.markerZ)) <= 1.25f && inventory.pawnItems.Count >= 1)
+					if (Utils.PlayerIsInRange(new Vector3(shop.markerX, shop.markerY, shop.markerZ), 1.25f) && inventory.pawnItems.Count >= 1)
 					{
-						if (!Mod.PlayerIsWanted()) // Player is not wanted so we show the sell message
+						if (!Utils.PlayerIsWanted()) // Player is not wanted so we show the sell message
 						{
 							StringBuilder subtitle = new StringBuilder(Localization.Localize.GetLangEntry("CanSell"));
 							subtitle.Replace("{inventory.totalValue}", $"{inventory.totalValue}");
@@ -92,11 +94,16 @@ namespace Watch_Dogs_Vehicle_Looting
 			if (Mod.config.settings.devMode)
 			{
 				if (e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
-				if (Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift) Mod.AddVehModelException(Game.Player.Character.CurrentVehicle.ClassType.ToString(), Game.Player.Character.CurrentVehicle.DisplayName.ToLower());
+				if (Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift)
+				{
+					Vehicle playerVehicle = Utils.GetPlayersCurrentVehicle();
+
+					Mod.AddVehModelException(playerVehicle.ClassType, playerVehicle.DisplayName);
+				}
 			}
 
 			// If the pawnshop use key is pressed
-			if (e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && !Mod.PlayerIsWanted())
+			if (e.KeyCode == Keys.E && !Game.Player.Character.IsInVehicle() && !Utils.PlayerIsWanted())
 			{
 				foreach(PawnShop shop in Mod.config.pawnShops)
 				{
@@ -104,13 +111,13 @@ namespace Watch_Dogs_Vehicle_Looting
 					Vector3 markerPos = new Vector3(shop.markerX, shop.markerY, shop.markerZ);
 					Inventory inventory = InventoryManagement.GetInventory((PedHash)Game.Player.Character.Model.GetHashCode());
 
-					if (World.GetDistance(Game.Player.Character.Position, markerPos) <= 1.25f && inventory.pawnItems.Count >= 1)
+					if (Utils.PlayerIsInRange(markerPos, 1.25f) && inventory.pawnItems.Count >= 1)
 					{
 						// Sell every item
 						int itemCount = inventory.pawnItems.Count;
 						int itemValue = inventory.totalValue;
 
-						Mod.PlaySellItemCinematic();
+						Utils.PlaySellItemCinematic();
 
 						bool caughtByCops = false;
 						if (new Random().Next(0, 100) >= 80) caughtByCops = true;
