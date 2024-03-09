@@ -93,12 +93,19 @@ namespace Watch_Dogs_Vehicle_Looting
 			// Developer commands
 			if (Mod.config.settings.devMode)
 			{
-				if (e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
-				if (Game.Player.Character.IsInVehicle() && e.KeyCode == Keys.Add && e.Shift)
-				{
-					Vehicle playerVehicle = Utils.GetPlayersCurrentVehicle();
+				if (e.KeyCode == Keys.X && e.Shift) Mod.LootVehicle(null); // Get random loot
 
-					Mod.AddVehModelException(playerVehicle.ClassType, playerVehicle.DisplayName);
+				if (e.KeyCode == Keys.L && e.Shift) Mod.CreatePawnShop(Game.Player.Character.Position);
+
+				if (e.KeyCode == Keys.Add && e.Shift)
+				{
+					if (Game.Player.Character.IsInVehicle())
+					{
+						Vehicle playerVehicle = Utils.GetPlayersCurrentVehicle();
+
+						Mod.AddVehModelException(playerVehicle.ClassType, playerVehicle.DisplayName);
+					}
+					else Notification.Show("Must be in a vehicle to add vehicle model to exception list");
 				}
 			}
 

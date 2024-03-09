@@ -105,30 +105,40 @@ namespace Watch_Dogs_Vehicle_Looting
 
 			// Save the configuration json
 			File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
+
+			Notification.Show($"Created pawn shop on \"{World.GetStreetName(location)}\"");
 		}
 
 		public static void AddVehModelException(VehicleClass vehClass, string vehModel)
 		{
 			string strClass = vehClass.ToString();
 			string strModel = vehModel.ToLower();
+			BlockedClass blockClass = null;
 
 			// Iterate over each blocked class to find the right one
 			foreach (BlockedClass blocked in config.blockedClasses)
 			{
-				if (blocked.className == strClass)
-				{
-					// Add model to exception list if it's not already there
-					if (!blocked.modelExceptions.Contains(strModel))
-					{
-						// Add the model
-						blocked.modelExceptions.Add(strModel);
-						blockedClassExceptions.Add(new Model(strModel));
-
-						// Save the configuration json
-						File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
-					}
-				}
+				if (blocked.className == strClass) blockClass = blocked;
 			}
+
+			// Make sure the BlockedClass is not null before continuing; If null, notify the player that the vehicle's class is not blocked
+			if (blockClass != null)
+			{
+				// Add model to exception list if it's not already there
+				if (!blockClass.modelExceptions.Contains(strModel))
+				{
+					// Add the model
+					blockClass.modelExceptions.Add(strModel);
+					blockedClassExceptions.Add(new Model(strModel));
+
+					// Save the configuration json
+					File.WriteAllText(modConfig, JsonConvert.SerializeObject(config, Formatting.Indented));
+
+					Notification.Show($"\"{strModel}\" added to \"{blockClass.className}\" model exception list");
+				}
+				else Notification.Show($"\"{strModel}\" is already an exception of the \"{blockClass.className}\" vehicle class");
+			}
+			else Notification.Show($"\"{strClass}\" is not part of an excluded class");
 		}
 
 		public static void LootVehicle(Vehicle veh)
@@ -203,7 +213,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			{
 				Classes.Items.Weapon weapon = weapons[r.Next(weapons.Count)];
 
-				// If player has weapon then reroll LootVehicle
+				// If player has weapon then reroll LootVehicle()
 				if (Game.Player.Character.Weapons.HasWeapon(weapon.weaponHash))
 				{
 					LootVehicle(veh);
