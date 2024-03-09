@@ -1528,7 +1528,7 @@ namespace Watch_Dogs_Vehicle_Looting
 			new BlockedClass()
 			{
 				className = "Utility",
-				modelExceptions = new List<string> {"sadler", "sadler2", "scrap", "towtruck", "towtruck2", "utillitruck", "utillitruck2", "utillitruck3", "slamtruck"}
+				modelExceptions = new List<string> {"ripley", "sadler", "sadler2", "scrap", "slamtruck", "towtruck", "towtruck2", "utillitruck", "utillitruck2", "utillitruck3"}
 			}
 		};
 	}
