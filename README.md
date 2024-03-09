@@ -25,7 +25,7 @@ Changes in my version compared to the one on [GTA5-Mods](https://www.gta5-mods.c
 4. Vehicle class block list so motorcycles and other vehicle classes can't be looted
 	1. Includes an exception list for specific vehicle models
 5. Food items now heal specific amounts according to configurable values in modConfig.json
-6. Localization support for each supported language in GTA 5 (W.I.P as of 6th of November, 2023)
+6. Localization support for each supported language in GTA 5 (Last updated: 2023, Nov 6)
 
 <div align="center">
 <h3><i>Localization Support</i></h3>
@@ -46,7 +46,7 @@ Changes in my version compared to the one on [GTA5-Mods](https://www.gta5-mods.c
 | Russian              | No Progress\* | No Progress   | No Progress   | Full         |
 | Spanish              | No Progress\* | No Progress   | No Progress   | Full         |
 
-<h6>* = Bare minimum localization support from strings already available in-game</h6>
+<h6>* = Bare minimum localization support from strings already available in-game (probably incorrect)</h6>
 </div>
 
 
@@ -57,5 +57,3 @@ Changes in my version compared to the one on [GTA5-Mods](https://www.gta5-mods.c
 Make sure to check out the original mod authors:
  * [Starman0620](https://www.gta5-mods.com/users/Starman0620)
  * [pirateneo](https://www.gta5-mods.com/users/pirateneo)
-
-<h6>Disclaimer: I am not a programmer, all new code will have been heavily referenced</h6>
