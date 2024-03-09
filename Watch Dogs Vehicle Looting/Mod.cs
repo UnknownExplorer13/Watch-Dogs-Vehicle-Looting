@@ -15,8 +15,8 @@ namespace Watch_Dogs_Vehicle_Looting
 	{
 		// Configuration stuff
 		public static Configuration config;
-		public static List<Item> items;
 		public static List<Food> food;
+		public static List<Item> items;
 		public static List<Classes.Items.Weapon> weapons;
 
 		// Directories
@@ -24,11 +24,11 @@ namespace Watch_Dogs_Vehicle_Looting
 		public static string itemDir = $"{resourceDir}\\Items";
 
 		// Files
-		public static string pawnItemsJson = $"{itemDir}\\pawnItems.json";
-		public static string foodItemsJson = $"{itemDir}\\foodItems.json";
-		public static string weaponsJson = $"{itemDir}\\weapons.json";
 		public static string modConfig = $"{resourceDir}\\modConfig.json";
 		public static string inventories = $"{resourceDir}\\inventories.json";
+		public static string foodItemsJson = $"{itemDir}\\foodItems.json";
+		public static string pawnItemsJson = $"{itemDir}\\pawnItems.json";
+		public static string weaponsJson = $"{itemDir}\\weapons.json";
 
 		// Misc
 		public static List<Blip> blips = new List<Blip>();
@@ -42,8 +42,8 @@ namespace Watch_Dogs_Vehicle_Looting
 			if (!Directory.Exists(itemDir)) Directory.CreateDirectory(itemDir);
 
 			// Items
-			if (!File.Exists(pawnItemsJson)) File.WriteAllText(pawnItemsJson, JsonConvert.SerializeObject(Defaults.defaultItems, Formatting.Indented));
 			if (!File.Exists(foodItemsJson)) File.WriteAllText(foodItemsJson, JsonConvert.SerializeObject(Defaults.defaultFood, Formatting.Indented));
+			if (!File.Exists(pawnItemsJson)) File.WriteAllText(pawnItemsJson, JsonConvert.SerializeObject(Defaults.defaultItems, Formatting.Indented));
 			if (!File.Exists(weaponsJson)) File.WriteAllText(weaponsJson, JsonConvert.SerializeObject(Defaults.defaultWeapons, Formatting.Indented));
 
 			// Configuration & Inventory
@@ -55,8 +55,8 @@ namespace Watch_Dogs_Vehicle_Looting
 		{
 			// Deserialize all of the json files
 			config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(modConfig));
-			items = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(pawnItemsJson));
 			food = JsonConvert.DeserializeObject<List<Food>>(File.ReadAllText(foodItemsJson));
+			items = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(pawnItemsJson));
 			weapons = JsonConvert.DeserializeObject<List<Classes.Items.Weapon>>(File.ReadAllText(weaponsJson));
 
 			// Iterate over each blocked class and its exceptions and add them to lists
